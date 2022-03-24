@@ -37,12 +37,12 @@ def calc_recall_at_k(T, Y, k):
     Y : [nb_samples x k] (k predicted labels/neighbours)
     """
     Y = torch.from_numpy(Y)
-#     s = sum([1 for t, y in zip(T, Y) if t in y[:k]])
-    s = 0
-    for t, y in zip(T, Y):
-        if t in y[:k]:
-            s += 1
-        print(t, y[:k])
+    s = sum([1 for t, y in zip(T, Y) if t in y[:k]])
+#     s = 0
+#     for t, y in zip(T, Y):
+#         if t in y[:k]:
+#             s += 1
+#         print(t, y[:k])
     return s / (1. * len(T))
 
 
